@@ -1,30 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
-import Login from './Components/Login.jsx';
-import Task from './Components/Task.jsx';
-import Comments from './Components/Comments.jsx';
-
-const router = createBrowserRouter ([
-  {
-    path: "/",
-    element: <Login />
-  },
-  {
-    path: "/task",
-    element: <Task />
-  },
-  {
-    path: "/comments/:category/:id",
-    element: <Comments />
-  }
-])
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-    <App />
-  </React.StrictMode>,
-)
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>
+);

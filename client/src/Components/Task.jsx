@@ -1,20 +1,19 @@
-import React from 'react'
-import Nav from './Nav'
-import AddTask from './AddTask'
-import TaskContainer from './TaskContainer'
-import io from 'socket.io-client';
+import React from "react";
+import AddTask from "./AddTask";
+import TaskContainer from "./TaskContainer";
+import Nav from "./Nav";
+import socketIO from "socket.io-client";
 
-const socket = io.connect("http://localhost:5000/")
-
+const socket = socketIO.connect("http://localhost:4000");
 
 const Task = () => {
-  return (
-    <>
-      <Nav />
-      <AddTask socket={socket}/>
-      <TaskContainer socket={socket}/>
-    </>
-  )
-}
+	return (
+		<div>
+			<Nav />
+			<AddTask socket={socket} />
+			<TaskContainer socket={socket} />
+		</div>
+	);
+};
 
-export default Task
+export default Task;
